@@ -1,5 +1,4 @@
 package com.codam.pandemicsim;
-import java.lang.*;
 
 public class Simulation {
     private int     size = 0;
@@ -141,7 +140,7 @@ public class Simulation {
         return sum;
     }
 
-    private final String redCode(int on) {
+    private String redCode(int on) {
         final String RED = "\u001B[31m";
         final String RESET = "\033[0m";
 
