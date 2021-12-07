@@ -96,15 +96,16 @@ public class Simulation {
 
     void    printBoard(int[][] boardToPrint, int round) {
         System.out.println("\nCurrent state of board [round " + round + "]:");
-        System.out.print("  ");
+        System.out.print(String.format("%3c", ' '));
         for (int i = 1; i < size + 1; i++) {
-            System.out.print(i + " ");
+            System.out.print(String.format("%3d", i));
         }
         System.out.print("\n");
         for (int row = 0; row < size; row++) {
-            System.out.print((row + 1) + " ");
+            System.out.print(String.format("%3d", row + 1));
             for (int col = 0; col < size; col++) {
-                System.out.print(redCode(boardToPrint[row][col]) + boardToPrint[row][col] + " ");
+                System.out.print(redCode(boardToPrint[row][col])
+                        + String.format("%3d", boardToPrint[row][col]));
             }
             System.out.print(redCode(0) + "\n");
         }
