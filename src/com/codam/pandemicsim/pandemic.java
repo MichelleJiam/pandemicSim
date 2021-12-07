@@ -2,7 +2,10 @@ package com.codam.pandemicsim;
 
 public class pandemic {
     public static void main(String[] args) {
-        System.out.println("----- Simulation start -----");
+        System.out.println(
+                "\n\uD83E\uDDA0\uD83E\uDDA0\uD83E\uDDA0"
+                + " Pandemic Simulation start "
+                + "\uD83E\uDDA0\uD83E\uDDA0\uD83E\uDDA0");
         if (args.length < 5) {
             System.out.println("Please provide arguments in order: \n"
                     + "- board size\n" + "- rounds\n"

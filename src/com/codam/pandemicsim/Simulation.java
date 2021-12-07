@@ -87,7 +87,7 @@ public class Simulation {
     }
 
     void    printParams() {
-        System.out.println("Size: " + size);
+        System.out.println("Board size: " + size);
         System.out.println("Rounds: " + rounds);
         System.out.println("Infection threshold: " + th_infection);
         System.out.println("Recovery threshold: " + th_recovery);
