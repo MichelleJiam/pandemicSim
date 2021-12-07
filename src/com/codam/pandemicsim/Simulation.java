@@ -70,22 +70,16 @@ public class Simulation {
     void    markInfected(String coord_x, String coord_y) {
         int col = tryParse(coord_x, "infected coordinate") - 1;
         int row = tryParse(coord_y, "infected coordinate") - 1;
-//        System.out.println("markInfected: x" + coord_x + " y " + coord_y);
-//        System.out.println(board[row][col]);
         board[row][col] = 1;
-//        System.out.println(board[row][col]);
     }
 
     void    runSimulation() {
         int[][] newBoard = copyBoard();
-//        printBoard(newBoard, 0);
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
                 int adjInfected = sumAdjacent(row, col);
-//                System.out.println("[" + (col+1) + "," + (row+1) + "]: " + adjInfected);
                 if (board[row][col] == 0 && adjInfected > th_infection
-                    || board[row][col] == 1 && adjInfected > th_recovery) {
-//                    System.out.println("[" + (col + 1) + "," + (row + 1) + "] hit threshold");
+                        || board[row][col] == 1 && adjInfected > th_recovery) {
                     newBoard[row][col] ^= 1;
                 }
             }
