@@ -1,5 +1,5 @@
 # pandemicSim
-A pandemic simulator, made as a technical interview assignment for [aNewSpring](https://www.anewspring.com/).
+A pandemic simulator, made as a mock technical interview assignment from [aNewSpring](https://www.anewspring.com/).
 
 ## Description
 A Java simulator modelling the spread of a virus on a grid of `n*n` persons over the course of `r` rounds.
