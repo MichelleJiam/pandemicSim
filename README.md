@@ -32,7 +32,7 @@ and 4 infected persons at the listed coordinates.
 ## Demonstration
 > run with above example parameters
 
-![simulation demo](https://i.imgur.com/vkvq7M7.png?1)
+![simulation demo](https://i.imgur.com/YTJAdX9.png?1)
 
 ## Resources
 [Java Code Conventions](https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html)
