@@ -1,10 +1,10 @@
 package com.codam.pandemicsim;
-
+// TODO: add currentRound variable to pass to printer
 public class Simulation {
     private int     size = 0;
     private int     rounds = 0;
-    private int     th_infection = 0;
-    private int     th_recovery = 0;
+    private int     thrInfection = 0;
+    private int     thrRecovery = 0;
     private int[][] board = null;
     private int     startingInfections = 0;
 
@@ -33,9 +33,9 @@ public class Simulation {
 
     void    setThresholds(String arg_infection, String arg_recovery) {
         if (arg_infection != null)
-            th_infection = tryParse(arg_infection, "infection threshold");
+            thrInfection = tryParse(arg_infection, "infection threshold");
         if (arg_recovery != null)
-            th_recovery = tryParse(arg_recovery, "recovery threshold");
+            thrRecovery = tryParse(arg_recovery, "recovery threshold");
     }
 
     void    setStartingInfections(int n) {
@@ -51,11 +51,11 @@ public class Simulation {
     }
 
     int    getInfectionThreshold() {
-        return th_infection;
+        return thrInfection;
     }
 
     int    getRecoveryThreshold() {
-        return th_recovery;
+        return thrRecovery;
     }
 
     int[][] getBoard() {
@@ -77,8 +77,8 @@ public class Simulation {
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
                 int adjInfected = sumAdjacent(row, col);
-                if (board[row][col] == 0 && adjInfected > th_infection
-                        || board[row][col] == 1 && adjInfected > th_recovery) {
+                if (board[row][col] == 0 && adjInfected > thrInfection
+                        || board[row][col] == 1 && adjInfected > thrRecovery) {
                     newBoard[row][col] ^= 1;
                 }
             }
@@ -89,8 +89,8 @@ public class Simulation {
     void    printParams() {
         System.out.println("Board size: " + size);
         System.out.println("Rounds: " + rounds);
-        System.out.println("Infection threshold: " + th_infection);
-        System.out.println("Recovery threshold: " + th_recovery);
+        System.out.println("Infection threshold: " + thrInfection);
+        System.out.println("Recovery threshold: " + thrRecovery);
         System.out.println("Infected persons at start: " + startingInfections);
     }
 
@@ -129,12 +129,12 @@ public class Simulation {
         return newBoard;
     }
 
-    private int sumAdjacent(int x, int y) {
+    private int sumAdjacent(int row, int col) {
         int sum = 0;
-        for (int i = Math.max(x - 1, 0); i <= Math.min(x + 1, size - 1); i++) {
-            for (int j = Math.max(y - 1, 0); j <= Math.min(y + 1, size - 1); j++) {
-                if (i != x || j != y) {
-                    sum += board[i][j];
+        for (int r = Math.max(row - 1, 0); r <= Math.min(row + 1, size - 1); r++) {
+            for (int c = Math.max(col - 1, 0); c <= Math.min(col + 1, size - 1); c++) {
+                if (r != row || c != col) {
+                    sum += board[r][c];
                 }
             }
         }

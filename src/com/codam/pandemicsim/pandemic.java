@@ -17,8 +17,8 @@ public class pandemic {
             Simulation simulation = parseArgs(args);
             validateParsedArgs(simulation);
             simulation.printParams();
-            simulation.printBoard(simulation.getBoard(), 0);
-            for (int i = 1; i < simulation.getRounds() + 1; i++) {
+            simulation.printBoard(simulation.getBoard(), 0); // TODO: make printer class that takes board as arg
+            for (int i = 1; i < simulation.getRounds() + 1; i++) { // TODO: move into Simulation class
                 simulation.runSimulation();
                 simulation.printBoard(simulation.getBoard(), i);
             }
